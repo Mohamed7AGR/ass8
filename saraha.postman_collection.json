@@ -1,0 +1,440 @@
+{
+  "info": {
+    "_postman_id": "1df7a922-939d-4f51-a10e-a47adb19bfa5",
+    "name": "saraha",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "41941596"
+  },
+  "item": [
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "admin",
+          "item": [
+            {
+              "name": "adminProfile",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{access_token}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\":\"mohamesddd@gmail.com\",\n    \"password\":\"123456789\"\n\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/user/admin/profile",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "user",
+                    "admin",
+                    "profile"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "signup",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"firstName\":\"mohamed\",\n    \"lastName\":\"hager\",\n    \"email\":\"mohamed@gmail.com\",\n    \"password\":\"12345678\",\n    \"gender\":0,\n    \"role\":1,\n\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/auth/signup",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "auth",
+                "signup"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "signup-done",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"firstName\":\"mohamed\",\n    \"lastName\":\"hager\",\n    \"email\":\"mohamed@gmail.com\",\n    \"password\":\"12345678\",\n    \"gender\":0\n\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/auth/signup",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "auth",
+                    "signup"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "328"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"148-GCzOOueXjC+Z/BhxId2NiJ4Nq3M\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 01 Nov 2026 12:13:09 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"User created successfully\",\n    \"data\": {\n        \"firstName\": \"mohamed\",\n        \"lastName\": \"hager\",\n        \"email\": \"mohamed@gmail.com\",\n        \"gender\": 0,\n        \"password\": \"12345678\",\n        \"_id\": \"6ae72cd5f2d73371084f314c\",\n        \"createdAt\": \"2026-11-01T12:13:09.755Z\",\n        \"updatedAt\": \"2026-11-01T12:13:09.755Z\",\n        \"__v\": 0,\n        \"fullName\": \"mohamed hager\",\n        \"id\": \"6ae72cd5f2d73371084f314c\"\n    }\n}"
+            },
+            {
+              "name": "signup-conflect",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"firstName\":\"mohamed\",\n    \"lastName\":\"hager\",\n    \"email\":\"mohamed@gmail.com\",\n    \"password\":\"12345678\",\n    \"gender\":0\n\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/auth/signup",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "auth",
+                    "signup"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Security-Policy",
+                  "value": "default-src 'none'"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/html; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "605"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 01 Nov 2026 12:32:15 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <title>Error</title>\n    </head>\n    <body>\n        <pre>Error: Email already exists\n            <br> &nbsp; &nbsp;at Module.signup (file:///mnt/DE44117244114F21/Route-2024/Nodejs/Sessions/Ali%20Hassan/2-Node%20js/12%20-%20saraha%201/saraha/src/module/auth/auth.service.js:6:24)\n            <br> &nbsp; &nbsp;at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n            <br> &nbsp; &nbsp;at async file:///mnt/DE44117244114F21/Route-2024/Nodejs/Sessions/Ali%20Hassan/2-Node%20js/12%20-%20saraha%201/saraha/src/module/auth/auth.controller.js:9:19\n        </pre>\n    </body>\n</html>"
+            }
+          ]
+        },
+        {
+          "name": "login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let response=pm.response.json();",
+                  "pm.environment.set(\"access_token\",response.data.accessToken)",
+                  "pm.environment.set(\"refresh_token\",response.data.refreshToken)",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\":\"mohamedd@gmail.com\",\n    \"password\":\"123456789\"\n\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "login-done",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\":\"mohamed@gmail.com\",\n    \"password\":\"12345678\"\n\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/auth/login",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "330"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"14a-FdrCqNTDFHo4Nv9YUso5jSobzak\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 01 Nov 2026 12:29:56 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"User logged in successfully\",\n    \"data\": {\n        \"_id\": \"6ae72cd5f2d73371084f314c\",\n        \"firstName\": \"mohamed\",\n        \"lastName\": \"hager\",\n        \"email\": \"mohamed@gmail.com\",\n        \"gender\": 0,\n        \"password\": \"12345678\",\n        \"createdAt\": \"2026-11-01T12:13:09.755Z\",\n        \"updatedAt\": \"2026-11-01T12:13:09.755Z\",\n        \"__v\": 0,\n        \"fullName\": \"mohamed hager\",\n        \"id\": \"6ae72cd5f2d73371084f314c\"\n    }\n}"
+            },
+            {
+              "name": "login-conflict",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\":\"mohamed@gmail.com\",\n    \"password\":\"12345678s\"\n\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/auth/login",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Security-Policy",
+                  "value": "default-src 'none'"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/html; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "611"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 01 Nov 2026 12:33:14 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <title>Error</title>\n    </head>\n    <body>\n        <pre>Error: Invalid email or password\n            <br> &nbsp; &nbsp;at Module.login (file:///mnt/DE44117244114F21/Route-2024/Nodejs/Sessions/Ali%20Hassan/2-Node%20js/12%20-%20saraha%201/saraha/src/module/auth/auth.service.js:13:21)\n            <br> &nbsp; &nbsp;at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n            <br> &nbsp; &nbsp;at async file:///mnt/DE44117244114F21/Route-2024/Nodejs/Sessions/Ali%20Hassan/2-Node%20js/12%20-%20saraha%201/saraha/src/module/auth/auth.controller.js:18:19\n        </pre>\n    </body>\n</html>"
+            }
+          ]
+        },
+        {
+          "name": "rotateToken",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{refresh_token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/auth/rotate-token",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "auth",
+                "rotate-token"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "user",
+      "item": [
+        {
+          "name": "profile",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
